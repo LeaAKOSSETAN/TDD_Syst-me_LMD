@@ -21,7 +21,7 @@ class Ues extends Model
         'semestre'
     ];
 
-    public function ECs() {
-        
+    public function ecs() {
+        return $this->hasMany(Ecs::class);
     }
 }
