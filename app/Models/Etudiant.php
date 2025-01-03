@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class UEs extends Model
+class Etudiant extends Model
 {
     use HasFactory;
 
@@ -15,13 +15,13 @@ class UEs extends Model
      */
     
     protected $fillable =[
-        'code',
+        'numero_etudiant',
         'nom',
-        'credits_ects',
-        'semestre'
+        'prenom',
+        'niveau',
     ];
 
-    public function ecs() {
-        return $this->hasMany(ECs::class);
+    public function note() {
+        return $this->hasMany(Note::class);
     }
 }

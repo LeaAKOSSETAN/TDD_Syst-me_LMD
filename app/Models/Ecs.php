@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class Ecs extends Model
+class ECs extends Model
 {
     use HasFactory;
 
@@ -22,6 +22,10 @@ class Ecs extends Model
     ];
 
     public function ues() {
-        return $this->belongsTo(Ues::class);
+        return $this->belongsTo(UEs::class);
+    }
+
+    public function notes() {
+        return $this->hasMany(Note::class);
     }
 }
