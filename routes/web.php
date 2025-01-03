@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UEsController;
+use App\Http\Controllers\ECsController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,3 +21,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::resource('ues', UEsController::class);
+Route::resource('ecs', ECsController::class);
