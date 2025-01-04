@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Unités d’Enseignement</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Custom CSS for visual emphasis */
-        .highlight {
-            background-color: #fef2f2;
-            color: #9b1c1c;
-        }
-        .table-container {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-    </style>
+   
 </head>
 <body class="bg-gray-50">
+<header>
+        <div class="logo">
+            📄 <span>Liste des Unités d’Enseignement</span>
+        </div>
+        <nav>
+            <a href="/home">Home</a>
+            <a href="/notes">Notes</a>
+            <a href="/create">Create</a>
+        </nav>
+</header>
+
 
     <!-- Container for the page -->
     <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
@@ -93,6 +93,42 @@ th {
 
 td {
     border-bottom: 1px solid #e5e7eb;
+}
+
+
+
+header {
+    background-color: #4C51BF; /* Bleu profond */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 70px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-left: 100px;
+    transition: color 0.3s ease;
+
+
+}
+
+header nav a:hover {
+    color: #A0AEC0; /* Gris clair au survol */
 }
 
 </style>
