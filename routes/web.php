@@ -24,7 +24,12 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/ues', [UEController::class, 'index'])->name('ues.index');
 
+Route::get('/saisie-notes', function () {
+    return view('notes.create');
+})->name('notes.create');
+
 
 Route::get('/notes/create', [NoteController::class, 'create'])->name('notes.create');
-
+Route::post('/notes', [NoteController::class, 'store'])->name('notes.store');
+Route::post('/notes', [NoteController::class, 'store'])->name('notes.store');
 require __DIR__.'/auth.php';

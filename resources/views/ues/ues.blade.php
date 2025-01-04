@@ -1,39 +1,98 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Unités d’Enseignement</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for visual emphasis */
+        .highlight {
+            background-color: #fef2f2;
+            color: #9b1c1c;
+        }
+        .table-container {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
 
-@section('title', 'Liste des UEs')
+    <!-- Container for the page -->
+    <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
 
-@section('content')
-    <h1>Liste des Unités d’Enseignement</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Code UE</th>
-                <th>Nom</th>
-                <th>ECTS</th>
-                <th>Semestre</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @php
-                $ues = [
-                    ['code' => 'UE11', 'nom' => 'Programmation Web', 'credits_ects' => 6, 'semestre' => 1],
-                    ['code' => 'UE12', 'nom' => 'Algorithmes', 'credits_ects' => 4, 'semestre' => 1],
-                ];
-            @endphp
+        <!-- Header section -->
+        <header class="text-center mb-6">
+            <h1 class="text-3xl font-semibold text-gray-800 mb-2">Liste des Unités d’Enseignement</h1>
+            <p class="text-gray-600">Découvrez toutes les unités d'enseignement de votre programme et gérez-les facilement.</p>
+        </header>
 
-            @foreach($ues as $ue)
-                <tr>
-                    <td>{{ $ue['code'] }}</td>
-                    <td>{{ $ue['nom'] }}</td>
-                    <td>{{ $ue['credits_ects'] }}</td>
-                    <td>S{{ $ue['semestre'] }}</td>
-                    <td>
-                        <button>Modifier</button>
-                        <button>Supprimer</button>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endsection
+        <!-- Table section -->
+        <div class="table-container bg-white">
+            <table class="min-w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">Code UE</th>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">Nom</th>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">ECTS</th>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">Semestre</th>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($ues as $ue)
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-4 py-2">{{ $ue['code'] }}</td>
+                            <td class="px-4 py-2">{{ $ue['nom'] }}</td>
+                            <td class="px-4 py-2">{{ $ue['credits_ects'] }}</td>
+                            <td class="px-4 py-2">S{{ $ue['semestre'] }}</td>
+                            <td class="px-4 py-2">
+                                <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Modifier</button>
+                                <button class="ml-2 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">Supprimer</button>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
+<style>
+    /* Custom styles for hover effects */
+table tr:hover {
+    background-color: #f3f4f6;
+}
+
+button:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Highlight the "Delete" button */
+button.bg-red-500:hover {
+    background-color: #9b1c1c;
+}
+
+/* Table Styling */
+.table-container {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+th {
+    background-color: #f3f4f6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+td {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+</style>
