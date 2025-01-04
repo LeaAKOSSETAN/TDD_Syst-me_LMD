@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+Route::get('/notes/create', [NoteController::class, 'create']);
+Route::post('/notes', [NoteController::class, 'store']);
+
 
 Route::get('/', function () {
     return view('welcome');
