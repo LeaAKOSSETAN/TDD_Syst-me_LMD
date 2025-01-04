@@ -6,10 +6,13 @@ use App\Http\Controllers\NoteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/ues', [UEController::class, 'index'])->name('ues.index');
+Route::get('/ues', function () {
+    return view('ues');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -19,5 +22,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get('/ues', [UEController::class, 'index'])->name('ues.index');
+
+
+Route::get('/notes/create', [NoteController::class, 'create'])->name('notes.create');
 
 require __DIR__.'/auth.php';

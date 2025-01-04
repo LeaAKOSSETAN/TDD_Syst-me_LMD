@@ -1,3 +1,5 @@
+@vite('resources/css/app.css')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,16 +28,6 @@
             </p>
             <a href="{{ route('ues.index') }}" class="btn">Éditer</a>
         </div>
-        <x-button>
-            Cliquer ici
-        </x-button>
-        <x-alert>
-    Ce message est une alerte !
-</x-alert>
-
-<!-- Ou bien avec un slot nommé -->
-<x-alert :message="'Attention!'"/>
-
     </div>
 </body>
 </html>

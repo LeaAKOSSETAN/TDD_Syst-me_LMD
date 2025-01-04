@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\UE;
+
 
 class UEController extends Controller
 {
@@ -12,6 +14,6 @@ class UEController extends Controller
         $ues = UE::all();
 
         // Retournez la vue avec les données
-        return view('ues', compact('ues'));
+        return view('ues.ues', compact('ues'));
     }
 }
