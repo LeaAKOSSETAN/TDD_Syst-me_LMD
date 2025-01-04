@@ -13,9 +13,9 @@
             📄 <span>Liste des Unités d’Enseignement</span>
         </div>
         <nav>
-            <a href="/home">Home</a>
-            <a href="/notes">Notes</a>
-            <a href="/create">Create</a>
+            <a href="../home">Home</a>
+            <a href="notes/create">Notes</a>
+            <a href="ues">Ues</a>
         </nav>
 </header>
 
@@ -36,7 +36,7 @@
                     <tr class="bg-gray-100">
                         <th class="px-4 py-2 text-left font-semibold text-gray-700">Code UE</th>
                         <th class="px-4 py-2 text-left font-semibold text-gray-700">Nom</th>
-                        <th class="px-4 py-2 text-left font-semibold text-gray-700">ECTS</th>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">Crédit</th>
                         <th class="px-4 py-2 text-left font-semibold text-gray-700">Semestre</th>
                         <th class="px-4 py-2 text-left font-semibold text-gray-700">Actions</th>
                     </tr>

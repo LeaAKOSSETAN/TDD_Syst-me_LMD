@@ -13,9 +13,9 @@
             📄 <span>Saisie Notes</span>
         </div>
         <nav>
-            <a href="/home">Home</a>
-            <a href="/notes">Notes</a>
-            <a href="/create">Create</a>
+            <a href="../home">Home</a>
+            <a href="create">Notes</a>
+            <a href="resources\views\ues\ues.blade.php">Ues</a>
         </nav>
     </header>
 
