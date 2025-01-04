@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use App\Models\Etudiant;
-use App\Models\Ecs;
+use App\Models\ECs;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -17,7 +17,7 @@ class NoteController extends Controller
     public function create()
     {
         $etudiants = Etudiant::all();
-        $elements = Ecs::all();
+        $elements = ECs::all();
         return view('notes.create', compact('etudiants', 'elements'));
     }
 

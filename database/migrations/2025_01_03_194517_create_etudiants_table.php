@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->enum('niveau',['L1','L2','L3']);
-            $table->date('etu_created_at');
-            $table->date('etu_updated_at');
             $table->timestamps();
         });
     }
