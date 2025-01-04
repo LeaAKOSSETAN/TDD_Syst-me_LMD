@@ -14,6 +14,7 @@ class ECs extends Model
      * @var array
      */
     
+    protected $table = 'ec';
     protected $fillable =[
         'code',
         'nom',

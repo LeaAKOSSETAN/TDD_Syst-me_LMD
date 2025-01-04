@@ -14,6 +14,7 @@ class UEs extends Model
      * @var array
      */
     
+    protected $table = 'ue';
     protected $fillable =[
         'code',
         'nom',

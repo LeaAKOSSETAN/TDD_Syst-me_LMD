@@ -26,8 +26,9 @@ class UETest extends TestCase
             'semestre' => 1
         ]);
 
-        $this->assertDatabaseHas('unites_enseignement', [
-            'code' => 'UE11'
+        
+        $this->assertDatabaseHas('ue', [
+            'code' => $ue->code,
         ]);
     }
 
