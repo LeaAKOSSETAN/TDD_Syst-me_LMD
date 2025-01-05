@@ -18,7 +18,7 @@ class ECsTest extends TestCase
         $ec = ECs::factory()->create([
             'code' => 'EC11',
             'nom' => 'Algorithmique',
-            'coefficient' => 3,
+            'coefficient' => 6,
         ]);
 
         $this->assertDatabaseHas('ec', ['code' => 'EC11']);

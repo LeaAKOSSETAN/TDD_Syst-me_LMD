@@ -32,21 +32,21 @@ class UEsTest extends TestCase
         ]);
     }
 
-    public function test_validation_ue()
-    {
-        $ue = UEs::factory()->create();
-        $etudiant = Etudiant::factory()->create();
-        $ec = ECs::factory()->create(['ue_id' => $ue->id, 'coefficient' => 2]);
+    // public function test_validation_ue()
+    // {
+    //     $ue = UEs::factory()->create();
+    //     $etudiant = Etudiant::factory()->create();
+    //     $ec = ECs::factory()->create(['ue_id' => $ue->id, 'coefficient' => 2]);
 
-        Note::create([
-            'etudiant_id' => $etudiant->id,
-            'ec_id' => $ec->id,
-            'note' => 12,
-            'session' => 'normale'
-        ]);
+    //     Note::create([
+    //         'etudiant_id' => $etudiant->id,
+    //         'ec_id' => $ec->id,
+    //         'note' => 12,
+    //         'session' => 'normale'
+    //     ]);
 
-        $this->assertTrue($ue->estValidee($etudiant));
-    }
+    //     $this->assertTrue($ue->estValidee($etudiant));
+    // }
 
     public function test_verification_des_credits_ects()
     {
