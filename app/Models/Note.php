@@ -14,12 +14,20 @@ class Note extends Model
      * @var array
      */
     
+    // Déclarez les colonnes qui peuvent être remplies via un formulaire
     protected $fillable =[
         'etudiant_id',
         'ec_id',
         'note',
         'session',
-        'date_evaluation'
+        'date_evaluation',
+        'etudiant_nom',
+        'etudiant_prenom',
+        'annee_etude',
+        'filiere',
+        'credit',
+        'semestre',
+        'coefficient',
     ];
 
     public function etudiant() {
@@ -29,4 +37,5 @@ class Note extends Model
     public function ecs() {
         return $this->belongsTo(ECs::class);
     }
+
 }
