@@ -18,7 +18,9 @@ return new class extends Migration
             $table->unsignedTinyinteger('coefficient');
             $table->foreignId('ue_id');
             $table->timestamps();
+
         });
+
     }
 
     /**
