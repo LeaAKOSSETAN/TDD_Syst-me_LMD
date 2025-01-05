@@ -32,4 +32,5 @@ Route::get('/saisie-notes', function () {
 Route::get('/notes/create', [NoteController::class, 'create'])->name('notes.create');
 Route::post('/notes', [NoteController::class, 'store'])->name('notes.store');
 Route::post('/notes', [NoteController::class, 'store'])->name('notes.store');
+Route::get('/notes', [NoteController::class, 'index'])->name('notes.index');
 require __DIR__.'/auth.php';

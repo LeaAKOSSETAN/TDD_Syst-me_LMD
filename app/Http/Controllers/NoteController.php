@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Note;
 
 class NoteController extends Controller
 {
@@ -32,5 +33,14 @@ class NoteController extends Controller
 
         // Rediriger ou afficher un message de succès
         return redirect()->route('notes.create')->with('success', 'Note enregistrée avec succès!');
+
+    }
+    public function index()
+    {
+        // Récupère toutes les notes et les passe à la vue
+        $notes = Note::all();
+        
+  
+return view('notes.index', compact('notes'));
     }
 }
