@@ -17,7 +17,7 @@ class EtudiantFactory extends Factory
     public function definition(): array
     {
         return [
-            'numero_etudiant' => $this->faker->unique()->numerify('2025#####'), // Génère un numéro étudiant unique
+            'numero_etudiant' => $this->faker->unique()->numerify('ETU#####'),
             'nom' => $this->faker->lastName,
             'prenom' => $this->faker->firstName,
             'niveau' => $this->faker->randomElement(['L1', 'L2', 'L3']),
