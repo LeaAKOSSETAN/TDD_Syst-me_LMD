@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('etudiants', function (Blueprint $table) {
-            $table->id();
-            $table->string('numero_etudiant');
-            $table->string('nom');
-            $table->string('prenom');
-            $table->enum('niveau',['L1','L2','L3']);
-            $table->timestamps();
+        Schema::table('notes', function (Blueprint $table) {
+            $table->dropColumn('note_created_at');
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('etudiants');
+        Schema::table('notes', function (Blueprint $table) {
+            $table->timestamp('note_created_at')->nullable();
+        });
     }
 };

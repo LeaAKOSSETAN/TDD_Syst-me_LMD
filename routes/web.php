@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UEsController;
 use App\Http\Controllers\ECsController;
+
+
+Route::get('/notes/create', [NoteController::class, 'create'])->name('notes.create');
+Route::post('/notes', [NoteController::class, 'store']);
 
 
 Route::get('/', function () {

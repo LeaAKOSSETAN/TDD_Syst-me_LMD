@@ -18,8 +18,6 @@ return new class extends Migration
             $table->float('note');
             $table->enum('session',['normale','rattrapage']);
             $table->date('date_evaluation');
-            $table->date('note_created_at');
-            $table->date('note_updated_at');
             $table->timestamps();
         });
     }

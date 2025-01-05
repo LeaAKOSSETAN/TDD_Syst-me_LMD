@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\UEs;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +21,7 @@ class ECsFactory extends Factory
             'code' => 'EC' . $this->faker->unique()->numerify('###'),
             'nom' => $this->faker->words(3, true),
             'coefficient' => $this->faker->numberBetween(1, 5),
-            'ue_id' => \App\Models\UEs::factory(), 
+            'ue_id' => UEs::factory(), 
         ];
     }
 }

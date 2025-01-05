@@ -24,4 +24,20 @@ class Etudiant extends Model
     public function note() {
         return $this->hasMany(Note::class);
     }
+    
+    public function calculerMoyenne()
+    {
+        $notes = $this->notes()->with('ec')->get();
+        $total = 0;
+        $totalCoefficients = 0;
+
+        foreach ($notes as $note) {
+            $ec = $note->ec;
+            $total += $note->valeur * $ec->coefficient;
+            $totalCoefficients += $ec->coefficient;
+        }
+
+        return $totalCoefficients > 0 ? $total / $totalCoefficients : 0; // Evite la division par zéro
+    }
+
 }
